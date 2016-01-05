@@ -1,0 +1,25 @@
+{
+  "name": "jcluo-react-event-listener",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JcluoIvan/react-event-listener.git"
+  },
+  "keywords": [
+    "react",
+    "eventemitter"
+  ],
+  "author": "JCLuo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JcluoIvan/react-event-listener/issues"
+  },
+  "homepage": "https://github.com/JcluoIvan/react-event-listener#readme"
+}
+
