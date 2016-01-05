@@ -1,1 +1,1 @@
-export default require('EventListener');
+export default require('./EventListener');
