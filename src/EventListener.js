@@ -2,23 +2,21 @@ export default function EventListener(Component) {
     return class extends Component {
         constructor (props) {
             super(props);
-            this._eventlisteners = { 
-                stores: [ ]
-            }
+            this._eventListenerStores = [];
         }
         componentWillUnmount () {
-            let { stores } = this._eventlisteners;
-            stores.forEach(({store, callbacks}, i) => {
-                callbacks.forEach(({event_name, callback}, j) => {
+            super.componentWillUnmount();
+            this._eventListenerStores.forEach(({store, callbacks}) => {
+                callbacks.forEach(({event_name, callback}) => {
                     store.removeListener(event_name, callback);
                 });
             });
         }
         watch (store, event_name, callback) {
             let storeIndex = null;
-            let { stores } = this._eventlisteners;
+            let stores = this._eventListenerStores;
 
-            (! event_name) && console.warn('不正確的資料', event_name);
+            (! event_name) && console.error('不正確的資料', event_name);
 
             stores.forEach((o, i) => {
                 if (o.store === store) {
