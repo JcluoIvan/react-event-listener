@@ -5,7 +5,7 @@ export default function EventListener(Component) {
             this._eventListenerStores = [];
         }
         componentWillUnmount () {
-            super.componentWillUnmount();
+            (super.componentWillUnmount) && componentWillUnmount();
             this._eventListenerStores.forEach(({store, callbacks}) => {
                 callbacks.forEach(({event_name, callback}) => {
                     store.removeListener(event_name, callback);
